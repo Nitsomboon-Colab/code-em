@@ -1,4 +1,41 @@
-img {
-  height: 240px;
-  width: 190px;
+body {
+ background-color: #FFFAE8 !important;
+}
+
+/* Sign Up Box */
+.signupBox {
+  padding-top: 8vh;
+}
+
+img.topImg {
+  max-width: 460px;
+  box-shadow: 5px 5px 4px gray;
+}
+
+/* SignUp */
+.icoBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 40%;
+  padding-top: 2vh;
+}
+
+input {
+ max-width: 60%;
+}
+
+.icoImg {
+  max-width: 63px;
+}
+
+/* CourseSelection */
+.divider {
+  border-bottom: 1px solid black;
+  margin-bottom: 3vh;
+  padding-top: 1vh;
+}
+
+.mt-5 > h3 {
+  font-weight: bold;
 }
