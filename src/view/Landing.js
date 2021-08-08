@@ -8,11 +8,12 @@ const Landing = () => {
   return (
     <Container>
       <Row>
-        <Col xs={4}>
+        <Col xs={12} sm={4}>
          <Image src="LandingImg1.jpg" rounded />
         </Col>
-        <Col xs={8}>
+        <Col xs={12} sm={8}>
           <h4>เริ่มเขียนโปรแกรมในรูปแบบใหม่กับเราสมัครฟรีได้เลย</h4>
+
         </Col>
       </Row>
     </Container>
