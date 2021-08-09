@@ -6,7 +6,7 @@ import "./Landing.css";
 
 const Landing = () => {
   return (
-    <Container">
+    <Container>
       <Row>
         <Col xs={12} sm={4}>
          <Image src="LandingImg1.jpg" rounded />

@@ -1,0 +1,32 @@
+.couseOthers {
+    text-align: right;
+    font-weight: bold;
+}
+
+.couseMe {
+    font-family: cursive;
+    width: 90%;
+}
+
+.aboutOthers {
+    text-align: right;
+    font-family: cursive;
+}
+
+.butOthers {
+    text-align: right;
+}
+
+.bg-2 {
+    background-color: rgb(252, 210, 71);
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.hMe {
+    font-weight: bold;
+}
+
+.colMe {
+    margin: 0%;
+}
