@@ -5,7 +5,6 @@ import Image from "react-bootstrap/Image";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import NavbarComponent from "../components/NavbarComponent";
 import ExploreCourse from "../components/ExploreCourse";
 import OfficialPlan from "../components/OfficialPlan";
 import "./Landing.css";
@@ -13,9 +12,6 @@ import "./Landing.css";
 const Landing = () => {
   return (
     <>
-      {/* Navbar */}
-      <NavbarComponent/>
-
       <Container className="landingContainer">
 
         {/* Sign Up Row */}
@@ -27,7 +23,8 @@ const Landing = () => {
           </Col>
 
           <Col xs={12} md={6} xl={6} className="mt-4">
-            <h2>เริ่มเขียนโปรแกรมกับเราวันนี้ <br/>
+            <h2>
+              เริ่มเขียนโปรแกรมกับเราวันนี้ <br/>
               สมัครฟรีได้เลย
             </h2>
 
@@ -35,12 +32,12 @@ const Landing = () => {
             <Form>
               <Form.Group className="mt-4 mb-3" controlId="formBasicEmail">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="name@example.com" />
+                <Form.Control type="email" placeholder="name@example.com" className="signUpInput"/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" placeholder="Password" className="signUpInput"/>
               </Form.Group>
 
               <Button variant="primary" type="submit" style={{minWidth:"8vw"}}>
