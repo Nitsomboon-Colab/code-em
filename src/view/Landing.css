@@ -2,40 +2,94 @@ body {
  background-color: #FFFAE8 !important;
 }
 
-/* Sign Up Box */
+/* SignUp Box */
 .signupBox {
-  padding-top: 8vh;
+  padding-top: 5vh;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 img.topImg {
-  max-width: 460px;
   box-shadow: 5px 5px 4px gray;
 }
 
 /* SignUp */
+
+input {
+ max-width: 60%;
+}
+
+/* SignUp Icons */
 .icoBox {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 40%;
+  width: 50%;
   padding-top: 2vh;
 }
 
-input {
- max-width: 60%;
+/* For spacing icons in the wide screen (1260px or wider)*/
+@media screen and (min-width: 1260px) {
+  .icoBox {
+    width: 40%;
+  }
 }
 
 .icoImg {
   max-width: 63px;
 }
 
-/* CourseSelection */
-.divider {
-  border-bottom: 1px solid black;
-  margin-bottom: 3vh;
-  padding-top: 1vh;
+/* Landing Goal */
+.landing-goal-container {
+  padding-bottom: 4vh;
+  padding-top: 5vh;
+  margin-top: 8vh;
+  background: #10162F;
+  color: white;
 }
 
-.mt-5 > h3 {
+.goalFirstRow {
+  padding-bottom: 40px;
+  padding-left: 6%;
+  max-width: 80%;
   font-weight: bold;
+}
+
+.goalSecondRow {
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.goalSecondRow h4 {
+  margin-bottom: 3vh;
+}
+
+#goal {
+  border-right: 1px solid white;
+  padding-bottom: 8vh;
+}
+
+#goal:last-child{
+  border: none;
+}
+
+/* Landing guide (yellow) */
+.landing-guide-container {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  background-color: #FFD600;
+  font-weight: bold;
+}
+
+.landing-guide-container h2 {
+  font-weight: bolder;
+}
+
+.landing-guide-container p {
+  font-size: 18px;
+}
+
+.instrcutorSide {
+  padding-top: 5vh;
+  text-align: right;
 }
