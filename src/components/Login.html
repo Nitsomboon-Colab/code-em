@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .body-bg{
+            background-color: gray;
+            background-image: linear-gradient(315deg, #6d21e8 0%, #17181b 63%);
+        }
+    </style>
+
+</head>
+<body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family: 'Times New Roman', Times, serif;">
+    <head class="" src="Code_em_logo.jpg"></head>
+    
+    <main class="bg-gray max-w-lg mx-auto p-8 md:p-12 my-10 shadow-2xl rounded" >   
+        <section>
+            <h3 class="font-sans text-3xl text-center text-white">Wellcome to Code{'</em>'}</h3>
+            <p class="text-gray-600 pt-2 ">Sign in to your account.</p>
+        </section>
+
+
+        <section class="mt-10">
+            <form class="flex flex-col" method="POST" action="#">
+                <div class="mb-6 pt-3 rounded bg-gray-200">
+                    <label class="block text-gray-700 font-mono mb-2 ml-3" for="email">Email</label>
+                    <input type="text" id="email" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-gray-300 "></input>
+                </div>
+                <div class="md-6 pt-3 rounded bg-gray-200">
+                    <label class="block text-gray-700 font-mono mb-2 ml-3" for="password">Password</label>
+                    <input type="text" id="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-gray-300"></input>
+                </div>
+                <div class="flex justify-end">
+                    <a href="#" class="text-sm text-purple-600 hover:text-purple-700 hover:underline mb-6">Forgot your password?</a>
+                </div>
+                <button class="bg-pink-600 hover:bg-pink-700 text-white font-mono py-2 rounded shadow-lg hover:shadow-x1 transition duration-200" type="submit">Sign In</button>
+            </form>
+        </section>
+    
+        <div class="max-w-lg mx-auto text-center mt-12 mb-6">
+            <p class="text-white font-mono">Don't have an account?<a href="#" class="font-bold hover:underline">Sign In</a></p>
+        </div>
+
+        <footer class="max-w-lg mx-auto flex justify-center text-white">
+            <a href="#" class="hover:underline font-mono">Contact</a>
+            <span class="mx-3">.</span>
+            <a href="#" class="hover:underline font-mono">Privacy</a>
+        </footer>    
+    </main>
+
+    
+</body>
+</html>
+
+
