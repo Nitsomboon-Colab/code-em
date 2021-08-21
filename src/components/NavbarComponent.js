@@ -1,13 +1,16 @@
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { HiX, HiMenuAlt3, HiOutlineBell } from "react-icons/hi";
+import { HiX, HiMenuAlt3, HiOutlineBell, HiSearch } from "react-icons/hi";
 import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Catalog', href: '#', current: true },
+  { name: 'Catalogue', href: '/catalogue', current: false },
   { name: 'Resources', href: '#', current: false },
   { name: 'Community', href: '#', current: false },
   { name: 'Pro Plan', href: '#', current: false },
 ]
+
+const loggedIn = false;
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -35,7 +38,7 @@ const NavbarComponent = () => {
               {/* Menu items container */}
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 {/* Menu Logo */}
-                <div className="flex-shrink-0 flex items-center">
+                <Link to="/"  as="div" className="flex-shrink-0 flex items-center">
                   <img
                     className="block lg:hidden h-16 w-auto"
                     src="codeEm-logo.png"
@@ -43,10 +46,10 @@ const NavbarComponent = () => {
                   />
                   <img
                     className="hidden lg:block h-12 w-auto"
-                    src="Logo_alt2.svg"
+                    src="Logo.svg"
                     alt="Workflow"
                   />
-                </div>
+                </Link>
                 {/* Menu items */}
                 <div className="hidden sm:block sm:ml-6 m-auto">
                    <div className="flex space-x-4">
@@ -68,7 +71,15 @@ const NavbarComponent = () => {
               </div>
 
               {/* Right side (search, profile, etc.) */}
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className="absolute inset-y-0 right-10 flex items-center space-x-4 pr-4 sm:static sm:inset-auto sm:ml-6 sm:pr-2">
+                <button
+                  type="button"
+                  className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                >
+                  <span className="sr-only">Search button</span>
+                  <HiSearch className="h-6 w-6" aria-hidden="true" />
+                </button>
+                {loggedIn ?
                 <button
                   type="button"
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
@@ -76,8 +87,27 @@ const NavbarComponent = () => {
                   <span className="sr-only">View notifications</span>
                   <HiOutlineBell className="h-6 w-6" aria-hidden="true" />
                 </button>
+                  : 
+                <>
+                  <button
+                    type="button"
+                    className="bg-gray-800 py-1 px-4 text-gray-300 font-semibold hover:text-white"
+                  >
+                    <span className="sr-only">Login button</span>
+                    <p className="" aria-hidden="true">Login</p>
+                  </button>
+                  <button
+                    type="button"
+                    className="bg-gray-800 py-1 px-6 text-gray-300 font-semibold border-2 border-primary hover:text-white hover:bg-primary"
+                  >
+                    <span className="sr-only">Sign up button</span>
+                    <p className="" aria-hidden="true">Sign up</p>
+                  </button>
+                </>
+                }
               </div>
               {/* Profile dropdown */}
+              {loggedIn ?
               <Menu as="div" className="ml-3 relative">
                 <div>
                   <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -132,14 +162,16 @@ const NavbarComponent = () => {
                   </Menu.Items>
                 </Transition>
               </Menu>
+                : null
+              }
             </div>
               
             <Disclosure.Panel className="sm:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className={classNames(
                       item.current ? 'bg-backgroundDark text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                       'block px-3 py-2 rounded-md text-base font-medium'
@@ -147,7 +179,7 @@ const NavbarComponent = () => {
                     aria-current={item.current ? 'page' : undefined}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </Disclosure.Panel>
@@ -155,18 +187,6 @@ const NavbarComponent = () => {
         </>
       )}
     </Disclosure>
-              
-
-                
-                  
-    //           </div>
-    //         </div>
-    //       </div>
-
-          
-    //     </>
-    //   )}
-    // </Disclosure>
   )
 }
 

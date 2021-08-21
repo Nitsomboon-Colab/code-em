@@ -7,10 +7,12 @@ module.exports = {
         primary: '#E06C75',
         secondary: '#D29A67',
         backgroundDark: '#1a222e',
-        designDark: '#282C35',
+        designDark: '#2e333d',
         designDarker: '#1C1F26',
-        
-      }
+        designLight: '#343945',
+        starGold: '#FB8200',
+      },
+      
     },
     // container: {
     //   screens: {

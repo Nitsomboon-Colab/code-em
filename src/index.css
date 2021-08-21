@@ -19,3 +19,14 @@
     @apply text-xl;
   }
 }
+
+@layer utilities {
+  .text-subtitle1 {
+    font-size: 0.85rem;
+    color: #9CA3AF;
+  }
+  .text-subtitle2 {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+  }
+}
