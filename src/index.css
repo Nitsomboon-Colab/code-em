@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-5xl;
+  }
+  h3{ 
+    @apply text-4xl;
+  }
+  h4{ 
+    @apply text-2xl;
+  }
+  h5 {
+    @apply text-xl;
+  }
+}
+
+@layer utilities {
+  .text-subtitle1 {
+    font-size: 0.85rem;
+    color: #9CA3AF;
+  }
+  .text-subtitle2 {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+  }
+}
