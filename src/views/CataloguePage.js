@@ -8,24 +8,22 @@ const CataloguePage = () => {
     <div className="bg-designDarker pt-10 pb-14 mt-20">
       <div className="container mx-auto max-w-7xl flex flex-col text-gray-200">
         {/* Featured course */}
-        <h4>
+        <h4 className="text-center lg:text-left">
           หลักสูตรแนะนำ
         </h4>
         <FeaturedCourses />
 
         {/* Promo banner */}
-        <div className="w-full mt-10">
-          <img src="promoBanner.svg" alt="" className="w-full"/>
-        </div>
+        <img src="promoBanner.svg" alt="" className="mt-10 hidden md:block"/>
         
         {/* Catalogue */}
-        <h3 className="mt-20 mb-2">
+        <h3 className="mt-20 mb-2 text-xl text-center lg:text-left md:text-4xl">
           คอร์สทั้งหมด
         </h3>
-        <hr className="w-1/4"/>
+        <hr className="w-1/4 hidden lg:block"/>
         <div className="mt-4 flex">
           {/* Side nav */}
-          <div className="bg-designDark mr-4 hidden lg:w-1/3  box-border lg:flex flex-col items-start">
+          <div className="bg-designDark hidden lg:w-1/3  box-border lg:flex flex-col items-start">
             {/* Categories */}
             <Disclosure as="div" className="w-full bg-designLight">
               {({ open }) => (
@@ -86,7 +84,7 @@ const CataloguePage = () => {
           </div>
 
           {/* Catalogue */}
-          <div className="bg-designDark py-8 px-6 grid lg:grid-cols-4 auto-rows-auto gap-5 gap-y-10">
+          <div className="bg-designDark py-8 px-6 mx-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-auto gap-5 gap-y-10">
             <CourseCover />
             <CourseCover />
             <CourseCover />

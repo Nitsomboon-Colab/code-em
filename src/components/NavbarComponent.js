@@ -1,6 +1,6 @@
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { HiX, HiMenuAlt3, HiOutlineBell, HiSearch } from "react-icons/hi";
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const navigation = [
@@ -10,15 +10,17 @@ const navigation = [
   { name: 'Pro Plan', href: '#', current: false },
 ]
 
-const loggedIn = false;
+const loggedIn = true;
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 const NavbarComponent = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
-    <Disclosure as="nav" className="bg-gray-800 fixed top-0 w-full z-50">
+    <Disclosure as="nav" className="bg-gray-800 fixed top-0 w-screen z-50">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -38,33 +40,33 @@ const NavbarComponent = () => {
               {/* Menu items container */}
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 {/* Menu Logo */}
-                <Link to="/"  as="div" className="flex-shrink-0 flex items-center">
+                <Disclosure.Button as={Link} to="/" className="flex-shrink-0 flex items-center">
                   <img
-                    className="block lg:hidden h-16 w-auto"
+                    className="block lg:hidden h-12 w-auto"
                     src="codeEm-logo.png"
-                    alt="Workflow"
+                    alt="Code'em"
                   />
                   <img
                     className="hidden lg:block h-12 w-auto"
                     src="Logo.svg"
-                    alt="Workflow"
+                    alt="Code'em"
                   />
-                </Link>
+                </Disclosure.Button>
                 {/* Menu items */}
-                <div className="hidden sm:block sm:ml-6 m-auto">
-                   <div className="flex space-x-4">
+                <div className="hidden md:block sm:ml-4 m-auto">
+                   <div className="flex space-x-4 items-center text-sm lg:text-base whitespace-nowrap">
                      {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
-                        className={'lg:text-lg md:text-base ' + classNames(
+                        to={item.href}
+                        className={classNames(
                           item.current ? 'bg-backgroundDark text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
+                          'px-3 py-2 rounded-md text-sm font-medium lg:text-lg md:text-base'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -74,7 +76,7 @@ const NavbarComponent = () => {
               <div className="absolute inset-y-0 right-10 flex items-center space-x-4 pr-4 sm:static sm:inset-auto sm:ml-6 sm:pr-2">
                 <button
                   type="button"
-                  className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                  className="bg-gray-800 p-1 hidden lg:block rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">Search button</span>
                   <HiSearch className="h-6 w-6" aria-hidden="true" />
@@ -165,11 +167,26 @@ const NavbarComponent = () => {
                 : null
               }
             </div>
-              
+            
+            {/* Menu when screen is small */}
             <Disclosure.Panel className="sm:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1">
+                {/* Login */}
+                <Link
+                  key="Login"
+                  to="#"
+                  className={classNames(
+                    loggedIn ? 'hidden' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    'block px-3 py-2 rounded-md text-base font-medium'
+                  )}
+                  aria-current={loggedIn ? 'page' : undefined}
+                  >
+                  Login
+                </Link>
+                {/* The rest of links */}
                 {navigation.map((item) => (
-                  <Link
+                  <Disclosure.Button
+                    as={Link}
                     key={item.name}
                     to={item.href}
                     className={classNames(
@@ -179,7 +196,7 @@ const NavbarComponent = () => {
                     aria-current={item.current ? 'page' : undefined}
                   >
                     {item.name}
-                  </Link>
+                  </Disclosure.Button>
                 ))}
               </div>
             </Disclosure.Panel>

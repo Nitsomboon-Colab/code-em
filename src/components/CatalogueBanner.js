@@ -1,36 +1,12 @@
-import classNames from "classnames";
+import classNames from "../utilities/classnames";
 import { HiChevronRight } from "react-icons/hi";
-
-const Box = classNames(
-  'h-96',
-  'w-full',
-  'rounded-xl',
-  'mt-12',
-  'mb-8',
-  'bg-designDarker',
-  'flex',
-  'box-border',
-  'mx-2'
-);
-
-const smallBox = classNames(
-  'flex-1',
-  'flex',
-  'flex-col',
-  'pt-12',
-  'px-4',
-  'space-y-6',
-  'rounded-xl',
-  'box-border',
-  'bg-designDarker',
-);
 
 const CatalogueBanner = () => {
   return (
     <div className="flex flex-col items-center">
       <div className={Box}>
         {/* Left side (details) */}
-        <div className="flex-1 p-10 my-auto">
+        <div className="flex-1 p-10 my-auto order-2 lg:order-1">
           <h2 className="mb-6">
             คอร์สแนะนำ
           </h2>
@@ -42,10 +18,10 @@ const CatalogueBanner = () => {
           </a>
         </div>
         {/* Right side (pic) */}
-        <img src="featuredTempPic.png" alt="" className="flex-1 max-h-full"/>
+        <img src="featuredTempPic.png" alt="" className="flex-1 max-h-full order-1 lg:order-2"/>
       </div>
 
-      <div className="h-96 w-full flex justify-between space-x-4 mb-10 mx-auto">
+      <div className="h-auto w-auto md:h-96 flex flex-col mb-10 justify-evenly space-y-4 mx-2 md:flex-row md:space-x-8 md:space-y-0 md:mx-auto">
         <div className={smallBox}>
           <h3 className="text-center">Learn</h3>
           <p>
@@ -79,5 +55,37 @@ const CatalogueBanner = () => {
     </div>
   )
 }
+
+//* Style
+const Box = classNames(
+  'h-auto',
+  'w-auto',
+  'flex',
+  'flex-wrap',
+  'rounded-xl',
+  'md:flex-wrap-0',
+  'md:h-96',
+  'mt-12',
+  'mb-8',
+  'bg-designDarker',
+  'box-border',
+  'mx-2'
+);
+
+const smallBox = classNames(
+  'flex-1',
+  'flex',
+  'flex-col',
+  'py-6',
+  'md:py-0',
+  'space-y-6',
+  'md:space-y-0',
+  'px-6',
+  'h-auto',
+  'justify-evenly',
+  'rounded-xl',
+  'box-border',
+  'bg-designDarker',
+);
 
 export default CatalogueBanner

@@ -2,17 +2,17 @@ import CourseRating from "../utilities/CourseRating";
 
 const CourseBanner = () => {
   return (
-    <div className="bg-designDark flex p-10 mt-4 rounded-md md:flex-wrap sm:mx-28 lg:mx-0">
+    <div className="bg-designDark flex flex-col lg:flex-row p-10 mt-4 rounded-md mx-6 lg:mx-0 items-center">
       {/* Left side (img) */}
-      <div className="lg:flex-1">
-        <img src="courses/pythonBig.png" alt="" className="sm:w-1/2 lg:w-full sm:mx-auto lg:mx-0"/>
+      <div className="">
+        <img src="courses/pythonBig.png" alt="" className="w-full max-w-xl h-auto mx-auto"/>
       </div>
       {/* Right side (details) */}
-      <div className="flex-shrink-0 w-3/5 pr-24 pl-10 flex flex-col justify-center sm:flex-grow sm:mt-6 lg:flex-grow-0 lg:mt-0">
-        <h3>
+      <div className="flex flex-col px-0 mt-6 lg:pr-24 lg:pl-10 lg:w-3/5 lg:mt-0">
+        <h3 className="text-xl lg:text-4xl">
           Learn Python - Full Course for Beginners (2021)
         </h3>
-        <p className="mt-6 mb-1">
+        <p className="mt-6 mb-1 text-sm lg:text-base">
           คอร์สการเรียน Python เบื้องต้นจะเป็นการปูพื้นฐานของผู้ที่ไม่มีประสบการณ์การเขียนโปรแกรมมาก่อน โดยเริ่มต้นจากการสอนขั้นพื้นฐานภาษา Python แล้วไปจนถึงการลองเขียน Desktop App สำหรับคำนวณสูตรคูณ
         </p>
         <CourseRating />

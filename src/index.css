@@ -9,10 +9,10 @@
   h2 {
     @apply text-5xl;
   }
-  h3{ 
+  h3 { 
     @apply text-4xl;
   }
-  h4{ 
+  h4 { 
     @apply text-2xl;
   }
   h5 {
@@ -21,12 +21,14 @@
 }
 
 @layer utilities {
-  .text-subtitle1 {
-    font-size: 0.85rem;
-    color: #9CA3AF;
-  }
-  .text-subtitle2 {
-    font-size: 0.75rem;
-    color: #9CA3AF;
+  @variants responsive {
+    .text-subtitle1 {
+      font-size: 0.85rem;
+      color: #9CA3AF;
+    }
+    .text-subtitle2 {
+      font-size: 0.70rem;
+      color: #9CA3AF;
+    }
   }
 }
